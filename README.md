@@ -1,19 +1,19 @@
-*Simple Layers Architecture Template Project.
+<p>*Simple Layers Architecture Template Project.</p>
 
-*Basically Including .NET Core 7.0, Entity Framework Core, AutoMapper and Repository Pattern Architecture.
+<p>*Basically Including .NET Core 7.0, Entity Framework Core, AutoMapper and Repository Pattern Architecture.</p>
 
-*It Includes =>
+<p>*It Includes =></p>
 
 <p>-Error Page</p>
--Admin Page
--DTO Structure
--View Component Structure
--Repository Pattern Architecture
--Essential Methods For CRUD
--Dependencies Extension For Program.cs
--Database Configurations Required
--Changeable Main Page
--Area Structure
+<p>-Admin Page</p>
+<p>-DTO Structure</p>
+<p>-View Component Structure</p>
+<p>-Repository Pattern Architecture</p>
+<p>-Essential Methods For CRUD</p>
+<p>-Dependencies Extension For Program.cs</p>
+<p>-Database Configurations Required</p>
+<p>-Changeable Main Page</p>
+<p>-Area Structure</p>
 
-*You Can Use For Every Project Types.
-*Good Luck.
+<p>*You Can Use For Every Project Types.</p>
+<p>*Good Luck.</p>
