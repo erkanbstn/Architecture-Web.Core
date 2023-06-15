@@ -2,6 +2,8 @@
 using Layers.Repository.DataAccess;
 using Layers.Service.Services;
 using System.Linq.Expressions;
+using System.Net.Http;
+using System.Security.Claims;
 
 namespace Layers.Service.Managers
 {
@@ -14,6 +16,24 @@ namespace Layers.Service.Managers
 			_userRepository = userRepository;
 		}
 
+		// Sign In User With Claims
+
+		public async Task<User> SignInAsync(User user)
+		{
+			return await _userRepository.SignInAsync(user);
+		}
+
+		// Sign In User With Claims
+
+		public async Task<ClaimsPrincipal> SignInWithClaimAsync(User user)
+		{
+			var signedUser = await SignInAsync(user);
+			var claims = new List<Claim> { new Claim(ClaimTypes.Name, signedUser.UserName) };
+			var userIdentity = new ClaimsIdentity(claims, "SignIn");
+			ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(userIdentity);
+			//HttpContext.Session.SetString("UserMail", x.WriterMail);
+			return claimsPrincipal;
+		}
 		public async Task ChangeStatusAllAsync(List<User> t)
 		{
 			await _userRepository.ChangeStatusAllAsync(t);
@@ -57,6 +77,13 @@ namespace Layers.Service.Managers
 		public async Task UpdateAsync(User t)
 		{
 			await _userRepository.UpdateAsync(t);
+		}
+
+		// Find User by UserName
+
+		public async Task<User> FindByUserNameAsync(string userName)
+		{
+			return await _userRepository.FindByUserNameAsync(userName);
 		}
 	}
 }

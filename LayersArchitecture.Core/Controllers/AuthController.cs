@@ -1,4 +1,5 @@
-﻿using Layers.Service.Services;
+﻿using Layers.Dto.Dtos.UserDto;
+using Layers.Service.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -40,9 +41,10 @@ namespace LayersArchitecture.Core.Controllers
 
 		// POST Sign In Page
 		[HttpPost]
-		public async Task<IActionResult> SignIn(int id)
+		public async Task<IActionResult> SignIn(UserLoginDto userLoginDto)
 		{
-			return View();
+			await HttpContext.SignInAsync(await _userService.SignInWithClaimAsync(new() { UserName = userLoginDto.UserName, Password = userLoginDto.Password }));
+			return Redirect("~/Admin/Dashboard/Index");
 		}
 
 		// GET Sign Up Page
