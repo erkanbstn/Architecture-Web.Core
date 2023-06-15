@@ -1,23 +1,61 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Layers.Service.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayersArchitecture.Core.Controllers
 {
-    public class AuthController : Controller
-    {
-        public IActionResult SignIn()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> SignIn(int id)
-        {
-            return View();
-        }
-        public async Task<IActionResult> SignOut()
-        {
-            await HttpContext.SignOutAsync();
-            return RedirectToAction("Index", "Main");
-        }
-    }
+	[AllowAnonymous]
+	public class AuthController : Controller
+	{
+		// User Manager Instance
+
+		private readonly IUserService _userService;
+
+		// Auth Constructor
+
+		public AuthController(IUserService userService)
+		{
+			_userService = userService;
+		}
+
+		// GET Sign Up Page
+		public IActionResult SignUp()
+		{
+			return View();
+		}
+
+		// POST Sign Up Page
+		[HttpPost]
+		public async Task<IActionResult> SignUp(int id)
+		{
+			return View();
+		}
+
+		// GET Sign In Page
+		public IActionResult SignIn()
+		{
+			return View();
+		}
+
+		// POST Sign In Page
+		[HttpPost]
+		public async Task<IActionResult> SignIn(int id)
+		{
+			return View();
+		}
+
+		// GET Sign Up Page
+		public async Task<IActionResult> SignOut()
+		{
+			await HttpContext.SignOutAsync();
+			return RedirectToAction("Index", "Main");
+		}
+
+		// Error Page
+		public IActionResult Error()
+		{
+			return View();
+		}
+	}
 }

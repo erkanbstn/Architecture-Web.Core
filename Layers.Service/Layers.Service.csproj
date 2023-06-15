@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Managers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Layers.Core\Layers.Core.csproj" />
     <ProjectReference Include="..\Layers.Repository\Layers.Repository.csproj" />
   </ItemGroup>

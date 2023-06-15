@@ -8,11 +8,5 @@ namespace LayersArchitecture.Core.Controllers
         {
             return View();
         }
-
-        // Error Page
-        public IActionResult Error()
-        {
-            return View();
-        }
     }
 }
