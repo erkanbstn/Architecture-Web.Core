@@ -1,4 +1,5 @@
 ﻿using Layers.Repository.DataAccess;
+using Layers.Repository.Initialize;
 using Layers.Repository.Interfaces;
 using Layers.Service.Managers;
 using Layers.Service.Services;
@@ -14,6 +15,9 @@ namespace LayersArchitecture.Core.Extensions
 		// Container Dependencies
 		public static void ConfigureServices(this IServiceCollection services, IConfiguration configuration)
 		{
+			// Database Initializer Transient
+
+			services.AddTransient<DatabaseInitializer>();
 
 			// Authentication Configuration
 
@@ -49,6 +53,15 @@ namespace LayersArchitecture.Core.Extensions
 		// App Dependencies
 		public static WebApplication ConfigureApp(this WebApplication app)
 		{
+			// Database Initializer Run
+
+			using (var scope = app.Services.CreateScope())
+			{
+				var services = scope.ServiceProvider;
+				var initialiser = services.GetRequiredService<DatabaseInitializer>();
+				initialiser.InitializeDatabase().Wait();
+			}
+
 
 			if (!app.Environment.IsDevelopment())
 			{
