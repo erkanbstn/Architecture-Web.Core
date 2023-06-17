@@ -1,4 +1,5 @@
 ﻿using Layers.Repository.DataAccess;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -20,8 +21,8 @@ namespace Layers.Repository.Initialize
 		// Initialize Database and Run Seed
 
 		public async Task InitializeDatabase()
-		{
-			if ((_appDbContext.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
+		{	
+			if (!await _appDbContext.GetService<IDatabaseCreator>().CanConnectAsync())
 			{
 				// Auto Migrate on Database
 
@@ -37,9 +38,9 @@ namespace Layers.Repository.Initialize
 
 				await _appDbContext.Users.AddAsync(new()
 				{
-					FullName="Erkan Bostan",
-					UserName="erkanbstn",
-					Password="123",
+					FullName = "Erkan Bostan",
+					UserName = "erkanbstn",
+					Password = "123",
 				});
 				await _appDbContext.SaveChangesAsync();
 			}
