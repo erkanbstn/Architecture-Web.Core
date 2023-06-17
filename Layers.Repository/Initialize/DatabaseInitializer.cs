@@ -1,11 +1,10 @@
 ﻿using Layers.Repository.DataAccess;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Layers.Repository.Initialize
 {
-	public class DatabaseInitializer
+    public class DatabaseInitializer
 	{
 		// AppDbContext Instance
 

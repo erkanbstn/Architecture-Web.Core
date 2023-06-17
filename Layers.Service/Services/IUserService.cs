@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 namespace Layers.Service.Services
 {
-	public interface IUserService : IRepositoryService<User>
+    public interface IUserService : IRepositoryService<User>
 	{
 		// Sign In User With Claims
 

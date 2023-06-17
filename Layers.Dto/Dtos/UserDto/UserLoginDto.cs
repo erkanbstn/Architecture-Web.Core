@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Layers.Dto.Dtos.UserDto
+﻿namespace Layers.Dto.Dtos.UserDto
 {
-	public class UserLoginDto
+    public class UserLoginDto
 	{
         // User Login Dtos
 

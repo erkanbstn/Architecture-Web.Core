@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LayersArchitecture.Core.Controllers
 {
-	[AllowAnonymous]
+    [AllowAnonymous]
 	public class AuthController : Controller
 	{
 		// User Manager Instance
@@ -47,8 +47,8 @@ namespace LayersArchitecture.Core.Controllers
 			return Redirect("~/Admin/Dashboard/Index");
 		}
 
-		// GET Sign Up Page
-		public async Task<IActionResult> SignOut()
+        // GET Sign Up Page
+        public async Task<IActionResult> SignOut()
 		{
 			await HttpContext.SignOutAsync();
 			return RedirectToAction("Index", "Main");

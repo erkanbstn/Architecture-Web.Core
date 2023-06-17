@@ -4,7 +4,7 @@ using Layers.Dto.Dtos.UserDto;
 
 namespace LayersArchitecture.Core.Extensions
 {
-	public class MapConfiguration : Profile
+    public class MapConfiguration : Profile
 	{
 		// Map Configuration
 

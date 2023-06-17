@@ -1,6 +1,6 @@
 ﻿namespace Layers.Core.Models
 {
-	public class User : BaseModel
+    public class User : BaseModel
 	{
         // User Entities
 

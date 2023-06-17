@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LayersArchitecture.Core.Extensions
 {
-	public static class AppConfiguration
+    public static class AppConfiguration
 	{
 		// Container Dependencies
 		public static void ConfigureServices(this IServiceCollection services, IConfiguration configuration)

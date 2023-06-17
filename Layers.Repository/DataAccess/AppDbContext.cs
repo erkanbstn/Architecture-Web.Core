@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Layers.Repository.DataAccess
 {
-	public class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         // Context Constructor
 

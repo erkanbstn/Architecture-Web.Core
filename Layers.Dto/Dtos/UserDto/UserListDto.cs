@@ -1,6 +1,6 @@
 ﻿namespace Layers.Dto.Dtos.UserDto
 {
-	public class UserListDto
+    public class UserListDto
 	{
 		// User Dtos
 

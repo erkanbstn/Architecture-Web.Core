@@ -3,7 +3,7 @@ using Layers.Repository.Interfaces;
 
 namespace Layers.Repository.DataAccess
 {
-	public interface IUserRepository : IModelRepository<User>
+    public interface IUserRepository : IModelRepository<User>
 	{
 		// Sign In User
 

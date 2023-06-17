@@ -2,12 +2,11 @@
 using Layers.Repository.DataAccess;
 using Layers.Service.Services;
 using System.Linq.Expressions;
-using System.Net.Http;
 using System.Security.Claims;
 
 namespace Layers.Service.Managers
 {
-	public class UserManager : IUserService
+    public class UserManager : IUserService
 	{
 		private readonly IUserRepository _userRepository;
 
