@@ -1,19 +1,21 @@
-<p>*Simple Layers Architecture Template Project.</p>
+# Katmanlı mimari örneği
 
-<p>*Basically Including .NET Core 7.0, Entity Framework Core, AutoMapper and Repository Pattern Architecture.</p>
+Yönetim paneli üzerinden katmanlı mimariyi gösteren örnek proje.
 
-<p>*It Includes =></p>
+## Ne var
 
-<p>-Error Page</p>
-<p>-Admin Page</p>
-<p>-DTO Structure</p>
-<p>-View Component Structure</p>
-<p>-Repository Pattern Architecture</p>
-<p>-Essential Methods For CRUD</p>
-<p>-Dependencies Extension For Program.cs</p>
-<p>-Database Configurations Required</p>
-<p>-Changeable Main Page</p>
-<p>-Area Structure</p>
+Çekirdek, DTO ve repository ayrı projelerdedir. Panelde giriş, ana sayfa ve hata sayfası vardır.
 
-<p>*You Can Use For Every Project Types.</p>
-<p>*Good Luck.</p>
+## Çalıştırma
+
+Çözümdeki web veya API projesinde şu komutu çalıştırın:
+
+```powershell
+dotnet run
+```
+
+Veritabanı kullanan projelerde bağlantı dizesini kendi ortamınıza göre güncelleyin.
+
+## Yığın
+
+.NET 7, ASP.NET Core MVC, Entity Framework Core, SQL Server ve repository deseni.
